@@ -73,5 +73,5 @@ export default angular.module('todosList', [
 ])
   .component('todosList', {
     templateUrl: 'imports/components/todosList/todosList.html',
-    controller: [$scope, TodosListCtrl]
+    controller: ['$scope', TodosListCtrl]
   });
