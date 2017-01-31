@@ -1,10 +1,5 @@
 <header>
-  <h1>Todo List</h1>
-
-  <label class="hide-completed">
-    <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
-    Hide Completed Tasks
-  </label>
+  <h1>Honey</h1>
 
   <login-buttons></login-buttons>
 
@@ -14,12 +9,12 @@
 </header>
  
 <ul>
-  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
+  <li class="bug-list-item" ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
     <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
  
-    <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
+    <button class="upvote" ng-click="$ctrl.upvote(task)"> Upvote </button>
  
     <span class="text">
-      <strong>{{task.username}}</strong> - {{task.text}}
+      <strong>{{task.username}}</strong> - {{task.text}} <strong> {{task.points}} Points </strong>
     </span>
 </ul>

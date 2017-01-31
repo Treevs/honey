@@ -1,9 +1,9 @@
 /* CSS declarations go here */
 body {
     font-family: sans-serif;
-    background-color: #FFA500;
-    background-image: linear-gradient(to bottom, #FFA500, #918e82 100%);
-    background-attachment: fixed;
+    background-color: #795548;
+    /*background-image: linear-gradient(to bottom, #f1c40f, #918e82 100%);*/
+    /*background-attachment: fixed;*/
  
     position: absolute;
     top: 0;
@@ -21,14 +21,18 @@ body {
     max-width: 600px;
     margin: 0 auto;
     min-height: 100%;
-    background: white;
+    background: #F5D76E;
 }
  
 header {
-    background: #d2edf4;
-    background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+    /*background: #F5D76E;*/
+    /*background-image: linear-gradient(to bottom, #f5f5d0, #e1e5f0 100%);*/
     padding: 20px 15px 15px 15px;
     position: relative;
+}
+
+.main-pane {
+    background: #F5D76E;
 }
  
 #login-buttons {
@@ -108,6 +112,10 @@ header .hide-completed {
  
 .toggle-private {
     margin-left: 5px;
+}
+
+.bug-list-item {
+    background-color: #FFC107;
 }
  
 @media (max-width: 600px) {
