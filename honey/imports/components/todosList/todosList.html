@@ -18,7 +18,5 @@
       <strong>{{task.username}}</strong> - {{task.text}} <strong> {{task.points}} Points </strong>
     </span>
 
-    <button class="toggle-private" ng-click="$ctrl.setPrivate(task)" ng-show="task.owner === $ctrl.currentUser._id">
-      {{task.private == true ? "Private" : "Public"}}
-    </button>
+    <button class="show-details">More Details</button>
 </ul>
