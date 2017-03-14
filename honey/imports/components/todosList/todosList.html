@@ -18,5 +18,6 @@
       <strong>{{task.username}}</strong> - {{task.text}} <strong> {{task.points}} Points </strong>
     </span>
 
-    <button class="show-details">More Details</button>
+    <button class="show-details" ng-click="$ctrl.moreDetails(task)">More Details</button>
+  </li>
 </ul>

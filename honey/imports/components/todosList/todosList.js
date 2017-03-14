@@ -64,8 +64,8 @@ class TodosListCtrl {
     Meteor.call('tasks.upvote', task._id);
   }
 
-  setPrivate(task) {
-    Meteor.call('tasks.setPrivate', task._id, !task.private);
+  moreDetails(task) {
+    Meteor.call('tasks.moreDetails', task._id, !task.private);
   }
 }
  

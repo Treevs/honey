@@ -73,21 +73,13 @@ Meteor.methods({
       }
     });
   },
-  'tasks.setPrivate' (taskId, setToPrivate) {
+  'tasks.moreDetails' (taskId) {
     check(taskId, String);
-    check(setToPrivate, Boolean);
-
     const task = Tasks.findOne(taskId);
 
     // Make sure only the task owner can make a task private
     if (task.owner !== Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
-
-    Tasks.update(taskId, {
-      $set: {
-        private: setToPrivate
-      }
-    });
   },
 });
