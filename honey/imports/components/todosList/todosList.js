@@ -64,9 +64,11 @@ class TodosListCtrl {
     Meteor.call('tasks.upvote', task._id);
   }
 
-  moreDetails(task) {
-    Meteor.call('tasks.moreDetails', task._id, !task.private);
+  updateDetails(task, summary) {
+    Meteor.call('tasks.updateDetails', task._id, summary);
   }
+
+
 }
  
 export default angular.module('todosList', [

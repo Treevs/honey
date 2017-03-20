@@ -17,10 +17,17 @@
     <span class="text">
       <strong>{{task.username}}</strong> - {{task.text}} <strong> {{task.points}} Points </strong>
     </span>
-    <div class="initiallyHidden hidden">
-      This should be hidden
-    </div>
+    <button class="show-details" ng-click="showThis = !showThis">More Details</button>
 
-    <button class="show-details" ng-click="$ctrl.moreDetails(task)">More Details</button>
+    <div ng-show="showThis">
+      <div class="details">
+        <textarea name="summary" cols="30" rows="10" ng-model="this.summary" ng-init="this.summary = task.summary">{{this.summary}}</textarea>
+      </div>
+      <span>This should be hidden</span>
+      <div class="btn-group">
+        <button class="update-details" ng-click="$ctrl.updateDetails(task, this.summary)">Save Details</button>
+      </div>
+
+    </div>
   </li>
 </ul>
