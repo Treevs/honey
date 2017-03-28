@@ -6,16 +6,105 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .hexagon {
+        .hex-top {
             width: 0;
-            border-bottom: 30px solid #6C6;
+            border-bottom: 30px solid #000000;
             border-left: 52px solid transparent;
             border-right: 52px solid transparent;
         }
+        .hex-middle {
+            width: 104px;
+            height: 60px;
+        }
+
+        .hex-bottom {
+            width: 0;
+            border-top: 30px solid #000000;
+            border-left: 52px solid transparent;
+            border-right: 52px solid transparent;
+        }
+
+        .hex-row {
+            clear: left;
+        }
+
+        .hexagon {
+            float: left;
+            margin-left: 3px;
+            margin-bottom: -26px;
+        }
+        
+
+
+        #hexagons {
+            width: 200%;
+            padding-bottom: 30px;
+            margin-left: -8px;
+            margin-bottom: -30px;
+            overflow: hidden;
+        }
+
+        .hex-row.even {
+            margin-left: -54px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="hexagon"></div>
+    <div id="hexagons">
     
+    </div>
+    
+    <script>
+        var width = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+
+        var height = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+        
+        var rowWidth = width/104
+        var numOfRows = height /52;
+        var hexagons = document.getElementById("hexagons");
+        for( var i=0; i<numOfRows; i++) {
+            var row = document.createElement("div")
+            if(i%2 == 0)
+                row.className = "hex-row even";
+            else
+                row.className = "hex-row";
+
+            for(var j=0; j<rowWidth; j++) {
+                var hexagon = createHexagon();
+                row.appendChild(hexagon);
+            }
+            hexagons.appendChild(row);
+        }
+
+        function createHexagon() {
+            var randomColor = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6); 
+            
+            var hexagon = document.createElement("div");
+            hexagon.className = "hexagon";
+            var top = document.createElement("div");
+            top.className = "hex-top";
+            top.style.borderBottomColor = randomColor;
+            
+            var middle = document.createElement("div");
+            middle.className = "hex-middle";
+            middle.style.background = randomColor;
+            
+            var bottom = document.createElement("div");
+            bottom.className = "hex-bottom";
+            bottom.style.borderTopColor = randomColor;
+
+            hexagon.appendChild(top);
+            hexagon.appendChild(middle);
+            hexagon.appendChild(bottom);
+
+            return hexagon;
+
+        }
+    </script>
 </body>
 </html>
