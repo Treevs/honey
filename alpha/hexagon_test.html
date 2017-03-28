@@ -82,8 +82,9 @@
         }
 
         function createHexagon() {
-            var randomColor = "#" + ('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6); 
-            
+
+            var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFA500"];
+            var randomColor = colors[Math.floor(Math.random()*colors.length)]; 
             var hexagon = document.createElement("div");
             hexagon.className = "hexagon";
             var top = document.createElement("div");
