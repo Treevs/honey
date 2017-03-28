@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
+        body {
+            background-color: #795548;
+        }
         .hex-top {
             width: 0;
             border-bottom: 30px solid #000000;
@@ -33,8 +37,6 @@
             margin-left: 3px;
             margin-bottom: -26px;
         }
-        
-
 
         #hexagons {
             width: 200%;
@@ -83,8 +85,9 @@
 
         function createHexagon() {
 
-            var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFA500"];
-            var randomColor = colors[Math.floor(Math.random()*colors.length)]; 
+            var colors = ["D9B611", "F3C13A", "F7CA18", "E2B13C", "A17917", "F5D76E", "F4D03F", "FFA400", "E08A1E" , 
+                            "FFB61E", "FAA945", "FFA631", "FFB94E", "E29C45", "CA6924", "F5AB35"]; //Not pictured: #F9690E
+            var randomColor = "#" + colors[Math.floor(Math.random()*colors.length)]; 
             var hexagon = document.createElement("div");
             hexagon.className = "hexagon";
             var top = document.createElement("div");
