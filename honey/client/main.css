@@ -2,10 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
+
+
 body {
     font-family: sans-serif;
-    /*background-color: #795548;*/
-    background-image: url("background3.png");
+    background-color: #ecf0f1;;
+    /*background-image: url("background3.png");*/
     /*background-attachment: fixed;*/
  
     position: absolute;
@@ -20,6 +22,53 @@ body {
     font-size: 14px;
     font-family: "Rubik";
 }
+
+
+.hex-top {
+    width: 0;
+    border-bottom: 30px solid #000000;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+.hex-middle {
+    width: 104px;
+    height: 60px;
+}
+
+.hex-bottom {
+    width: 0;
+    border-top: 30px solid #000000;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
+
+.hex-row {
+    clear: left;
+}
+
+.hexagon {
+    float: left;
+    margin-left: 3px;
+    margin-bottom: -26px;
+}
+
+#hexagons {
+    width: 200%;
+    padding-bottom: 30px;
+    margin-left: -8px;
+    margin-bottom: -30px;
+    
+    top: -52px;
+    position: fixed;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.hex-row.even {
+    margin-left: -54px;
+    
+}
+
  
 .container {
     max-width: 600px;
@@ -136,3 +185,4 @@ header .hide-completed {
         padding-bottom: 5px;
     }
 }
+
